@@ -63,7 +63,7 @@ pipeline {
                 
                 cd /var/jenkins_home/workspace/TestForPipeline/webdemo/build/libs
                 
-                scp webdemo.war hbao@10.209.21.215:/Users/hbao/Downloads/apache-tomcat-7.0.82/webapps
+                scp webdemo.war CHYaLi@10.209.21.242:/Users/hbao/Downloads/apache-tomcat-7.0.82/webapps
                 ssh CHYaLi@10.209.21.242 '
                 cd /Users/hbao/Downloads/apache-tomcat-7.0.82/bin
                 ./startup.sh
