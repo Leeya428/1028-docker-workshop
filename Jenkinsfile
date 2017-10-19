@@ -44,34 +44,34 @@ pipeline {
 
        }
         
-        stage('Deploy') {
+        //stage('Deploy') {
           //  when {
              //   expression {
                     /*如果测试失败，状态为UNSTABLE*/
                //     currentBuild.result == 'SUCCESS'
             //   }
          //   }
-            steps {
-                echo 'Deploying..'
+          //  steps {
+         //       echo 'Deploying..'
          
                 //sh 'ssh -tt hbao@10.209.21.215 < deploy.sh'
                 
-                sh """
-                set -e
-                ssh CHYaLi@10.209.21.242 'bash -s' < checktomcatstatus.sh
+          //      sh """
+          //      set -e
+          //      ssh CHYaLi@10.209.21.242 'bash -s' < checktomcatstatus.sh
 
                 
-                cd /var/jenkins_home/workspace/TestForPipeline/webdemo/build/libs
+          //      cd /var/jenkins_home/workspace/LastDamo/webdemo/build/libs
                 
-                scp webdemo.war CHYaLi@10.209.21.242:/Users/hbao/Downloads/apache-tomcat-7.0.82/webapps
-                ssh CHYaLi@10.209.21.242 '
-                cd /Users/hbao/Downloads/apache-tomcat-7.0.82/bin
-                ./startup.sh
-                '
-                """
+           //     scp webdemo.war CHYaLi@10.209.21.242:/Users/hbao/Downloads/apache-tomcat-7.0.82/webapps
+          //      ssh CHYaLi@10.209.21.242 '
+           //     cd /Users/hbao/Downloads/apache-tomcat-7.0.82/bin
+           //     ./startup.sh
+         //       '
+          //      """
                 
-            }
-        }
+          //  }
+      //  }
 
             }
         }
